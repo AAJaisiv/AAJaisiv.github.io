@@ -66,7 +66,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; /* keep head fully visible */
+  object-position: center 20%; /* better head positioning */
   border-radius: 50%; /* circular image */
   border: 4px solid white;
   box-shadow: var(--shadow);
@@ -80,7 +80,7 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -105,7 +105,7 @@ body {
 .section-subtitle {
   font-size: 1.1rem;
   color: var(--text-secondary);
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -139,13 +139,13 @@ body {
 
 .hero-description {
   font-size: 1.1rem;
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   opacity: 0.8;
 }
 
 .hero-container {
-  max-width: 800px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
@@ -180,7 +180,7 @@ body {
 /* Card Grid System */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -375,9 +375,9 @@ body {
 /* Skills Section with Progress Bars */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -587,6 +587,7 @@ body {
   
   .skills-grid {
     grid-template-columns: 1fr;
+    max-width: 100%;
   }
   
   .section-title {
