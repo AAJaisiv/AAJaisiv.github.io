@@ -17,16 +17,15 @@
 <body>
   <!-- Sidebar Navigation -->
   <nav class="navbar">
-    <div class="profile-pic-container">
-      <img src="profile.jpg" alt="Profile picture" class="profile-pic" />
-    </div>
+            <div class="profile-pic-container">
+                <img src="profile1.jpg" alt="Profile picture" class="profile-pic" />
+            </div>
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
@@ -43,6 +42,23 @@
             <p>
               I help organizations solve real business challenges by designing scalable data solutions. I transform complex, multi-source data into actionable insights that drive growth and efficiency. Skilled in advanced analytics, AI-driven modeling, and cloud data engineering to unlock strategic opportunities.
             </p>
+          </div>
+          <div class="hero-links">
+            <a href="https://github.com/AAJaisiv" target="_blank" class="hero-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/abhinavjaisivarkala/" target="_blank" class="hero-link">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://medium.com/@abhinavarkala" target="_blank" class="hero-link">
+              <i class="fab fa-medium"></i> Medium
+            </a>
+            <a href="mailto:abhinavarkala@gmail.com" class="hero-link">
+              <i class="fas fa-envelope"></i> abhinavarkala@gmail.com
+            </a>
+            <a href="tel:+19255998040" class="hero-link">
+              <i class="fas fa-phone"></i> +1 (234) 567-890
+            </a>
           </div>
         </div>
       </section>
@@ -126,16 +142,26 @@
                     <h2 class="section-title">Education</h2>
                     <p class="section-subtitle">Academic background and achievements</p>
                 </div>
-                <div class="card-grid">
-                    <div class="card education-card">
-                        <h3>Masters in Business Analytics</h3>
-                        <div class="institution">Albers School of Business,<br>Seattle University - Seattle, WA</div>
-                        <div class="date">2023 - 2025</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="education-card">
+                            <h3>Masters in Business Analytics</h3>
+                            <div class="institution">Albers School of Business, Seattle University - Seattle, WA</div>
+                            <div class="date">2023 - 2025</div>
+                            <div class="education-description">
+                                Specialized in Data Science with coursework in Distributed Systems, Machine Learning, Big Data Analytics, AWS Cloud Computing, and Artificial Intelligence.
+                            </div>
+                        </div>
                     </div>
-                    <div class="card education-card">
-                        <h3>Bachelors in Technology</h3>
-                        <div class="institution">Electrical and Electronic Engineering,<br>minor - CS applications<br>Jawaharlal Nehru Technological University</div>
-                        <div class="date">2015 - 2019</div>
+                    <div class="timeline-item">
+                        <div class="education-card">
+                            <h3>Bachelors in Technology</h3>
+                            <div class="institution">Electrical and Electronic Engineering, minor - CS applications, Jawaharlal Nehru Technological University</div>
+                            <div class="date">2015 - 2019</div>
+                            <div class="education-description">
+                                Foundation in electrical engineering with computer science applications, focusing on data structures, algorithms, and system design.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,6 +176,9 @@
                 </div>
                 <div class="card-grid">
                     <div class="card project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-cloud" style="color: var(--timeline-projects);"></i>
+                        </div>
                         <div class="project-image">
                             <img src="az.jpg" alt="Azure E-Commerce Data Engineering Pipeline thumbnail" />
                         </div>
@@ -165,6 +194,9 @@
                         </div>
                     </div>
                     <div class="card project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-database" style="color: var(--timeline-experience);"></i>
+                        </div>
                         <div class="project-image">
                             <img src="data_lake.jpg" alt="AWS Supply Chain Data Lake thumbnail" />
                         </div>
@@ -179,6 +211,9 @@
                         </div>
                     </div>
                     <div class="card project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-plane" style="color: var(--timeline-education);"></i>
+                        </div>
                         <div class="project-image">
                             <img src="airline.jpg" alt="Airline Choice Prediction AWS Pipeline thumbnail" />
                         </div>
@@ -194,6 +229,9 @@
                         </div>
                     </div>
                     <div class="card project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line" style="color: var(--timeline-skills);"></i>
+                        </div>
                         <div class="project-image">
                             <img src="stock_pipe.jpg" alt="Stock Data Pipeline thumbnail" />
                         </div>
@@ -225,86 +263,85 @@
                 </div>
                 <div class="skills-grid">
                     <div class="card">
-                        <h3>💻 Programming & Data Manipulation</h3>
-                        <ul>
-                            <li><strong>Languages:</strong> Python, SQL (T-SQL, PL/SQL, PostgreSQL, MySQL), Java, Scala, C++, JavaScript</li>
-                            <li><strong>Data Libraries/Frameworks:</strong> Pandas, NumPy, PySpark, Hadoop dbt (SQL-based modeling)</li>
-                        </ul>
+                        <div class="skill-item">
+                            <div class="skill-label">
+                                <span class="skill-name">Python & SQL</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress progress-blue" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-label">
+                                <span class="skill-name">ETL, ELT & Pipelines</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress progress-amber" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-label">
+                                <span class="skill-name">Docker & Kubernetes</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress progress-green" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-label">
+                                <span class="skill-name">Data Modelling</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress progress-red" style="width: 85%"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card">
-                        <h3>🔄 Data Engineering & ETL/ELT</h3>
-                        <ul>
-                            <li><strong>ETL Tools:</strong> AWS Glue, Azure Data Factory, SSIS, Apache Nifi</li>
-                            <li><strong>Batch & Streaming Processing:</strong> Apache Spark, PySpark, Apache Flink, Kafka</li>
-                            <li><strong>Data Ingestion:</strong> Kafka, REST APIs, SFTP Connectors</li>
-                            <li><strong>Data Warehousing:</strong> Amazon Redshift, BigQuery, Snowflake</li>
-                            <li><strong>Data Lake & Lakehouse:</strong> AWS S3, Delta Lake, HDFS</li>
-                            <li><strong>Orchestration Frameworks:</strong> Apache Airflow, AWS Step Functions, Prefect, Dagster</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>☁️ Cloud & DevOps</h3>
-                        <ul>
-                            <li><strong>Cloud Platforms:</strong> AWS (primary), Azure, GCP</li>
-                            <li><strong>Infrastructure Tools:</strong> Docker, Terraform, Jenkins, GitLab CI/CD</li>
-                            <li><strong>Other:</strong> Linux, RBAC (Role-Based Access Control)</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>📊 Business Intelligence & Data Visualization</h3>
-                        <ul>
-                            <li><strong>BI Tools:</strong> Power BI, Tableau, Looker, Hex</li>
-                            <li><strong>Reporting & Dashboarding:</strong> DAX, Power Query</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>🤖 Machine Learning & AI</h3>
-                        <ul>
-                            <li><strong>ML Libraries:</strong> Scikit-learn, TensorFlow</li>
-                            <li><strong>ML Lifecycle:</strong> MLflow, Feature Engineering (Feast), Model Evaluation</li>
-                            <li><strong>LLM Integration & NLP:</strong> Prompt Engineering, Text Preprocessing, Transformers</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>🚀 Agile & Project Management</h3>
-                        <ul>
-                            <li><strong>Methodologies:</strong> Agile, Scrum</li>
-                            <li><strong>Tools:</strong> Jira, Confluence</li>
-                        </ul>
+                        <div class="skill-item">
+                            <div class="skill-label">
+                                <span class="skill-name">AWS Services</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress progress-purple" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-label">
+                                <span class="skill-name">Machine Learning, LLMs & Agentic AI</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress progress-pink" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-label">
+                                <span class="skill-name">Data Warehousing</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress progress-cyan" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-label">
+                                <span class="skill-name">Cloud Architecture</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress progress-amber" style="width: 85%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="section" id="contact">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Contact</h2>
-                    <p class="section-subtitle">Let's connect! I'm always interested in new opportunities and collaborations.</p>
-                </div>
-                <div class="card-grid">
-                    <div class="card contact-card">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <h3>Email</h3>
-                        <p>Lets discuss opportunities and collaborations</p>
-                        <a href="mailto:abhinavarkala@gmail.com">abhinavarkala@gmail.com</a>
-                    </div>
-                    <div class="card contact-card">
-                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                        <h3>LinkedIn</h3>
-                        <p>Connect professionally</p>
-                        <a href="https://www.linkedin.com/in/abhinavjaisivarkala/" target="_blank">linkedin.com/in/abhinavjaisivarkala</a>
-                    </div>
-                    <div class="card contact-card">
-                        <div class="contact-icon"><i class="fab fa-github"></i></div>
-                        <h3>GitHub</h3>
-                        <p>Check out my code</p>
-                        <a href="https://github.com/AAJaisiv" target="_blank">github.com/AAJaisiv</a>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- Footer -->
         <footer class="footer">

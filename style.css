@@ -2,19 +2,40 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;900&display=swap');
 
-/* CSS Variables for consistent theming */
+/* CSS Variables for Dark Theme */
 :root {
-  --sidebar-bg: #8B7355; /* Earthy brown */
-  --sidebar-hover: #A0522D; /* Darker earthy brown */
-  --main-bg: #F8F9FA; /* Light gray background */
-  --card-bg: #FFFFFF; /* White cards */
-  --text-primary: #2C3E50; /* Dark blue-gray */
-  --text-secondary: #6C757D; /* Medium gray */
-  --accent: #E67E22; /* Orange accent */
-  --accent-hover: #D35400; /* Darker orange */
-  --border: #E9ECEF; /* Light border */
-  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+  /* Primary Colors */
+  --bg-primary: #1A1A1A; /* Deep charcoal background */
+  --bg-secondary: #2C2C2C; /* Medium charcoal for cards */
+  --text-primary: #F5F5F5; /* Soft white text */
+  --text-secondary: #B0B0B0; /* Light gray secondary text */
+  --accent-primary: #00C2B8; /* Vibrant teal accent */
+  
+  /* Timeline Marker Colors */
+  --timeline-experience: #3B82F6; /* Electric blue */
+  --timeline-education: #22C55E; /* Neon green */
+  --timeline-projects: #F59E0B; /* Warm amber */
+  --timeline-skills: #8B5CF6; /* Purple */
+  
+  /* Progress Bar Colors */
+  --progress-blue: #3B82F6;
+  --progress-amber: #F59E0B;
+  --progress-green: #22C55E;
+  --progress-red: #EF4444;
+  --progress-purple: #8B5CF6;
+  --progress-pink: #EC4899;
+  --progress-cyan: #06B6D4;
+  
+  /* Sidebar Colors */
+  --sidebar-bg: #1A1A1A;
+  --sidebar-hover: #2C2C2C;
+  --sidebar-active: #00C2B8;
+  
+  /* Effects */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
+  --border: #404040;
+  --border-light: #2C2C2C;
 }
 
 /* Reset and base styles */
@@ -26,7 +47,7 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--main-bg);
+  background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
 }
@@ -89,7 +110,8 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-  background: var(--sidebar-hover);
+  background: var(--sidebar-active);
+  color: white;
   transform: translateX(5px);
 }
 
@@ -98,6 +120,7 @@ body {
   margin-left: 280px;
   min-height: 100vh;
   padding: 2rem;
+  background: var(--bg-primary);
 }
 
 .container {
@@ -134,10 +157,11 @@ body {
 .hero {
   text-align: center;
   padding: 4rem 0;
-  background: #8B7355;
-  color: white;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   border-radius: 20px;
   margin-bottom: 4rem;
+  border: 1px solid var(--border);
 }
 
 .hero h1 {
@@ -173,6 +197,35 @@ body {
   padding: 0 2rem;
 }
 
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hero-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hero-link:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
 /* Card Grid System */
 .card-grid {
   display: grid;
@@ -182,12 +235,13 @@ body {
 }
 
 .card {
-  background: var(--card-bg);
+  background: var(--bg-secondary);
   border-radius: 12px;
   padding: 2rem;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
   transition: all 0.3s ease;
+  color: var(--text-primary);
 }
 
 .card:hover {
@@ -199,6 +253,23 @@ body {
 .project-card {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.project-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 2;
+  border: 2px solid var(--border);
 }
 
 .project-image {
@@ -224,7 +295,7 @@ body {
 
 .tech-tag {
   display: inline-block;
-  background: var(--accent);
+  background: var(--accent-primary);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -266,15 +337,52 @@ body {
   color: var(--accent-hover);
 }
 
-/* Experience Cards */
+/* Timeline Styles */
 .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  position: relative;
+  padding-left: 2rem;
 }
 
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 3rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.5rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--timeline-experience);
+  border: 3px solid var(--bg-primary);
+  z-index: 2;
+}
+
+.timeline-item:nth-child(2)::before {
+  background: var(--timeline-education);
+}
+
+.timeline-item:nth-child(3)::before {
+  background: var(--timeline-projects);
+}
+
+/* Experience Cards */
 .experience-card {
-  background: var(--card-bg);
+  background: var(--bg-secondary);
   border-radius: 12px;
   padding: 2rem;
   box-shadow: var(--shadow);
@@ -297,7 +405,7 @@ body {
 
 .experience-company {
   font-size: 1.1rem;
-  color: var(--accent);
+  color: var(--accent-primary);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -313,46 +421,82 @@ body {
   line-height: 1.6;
 }
 
-/* Skills Cards */
+/* Skills Section with Progress Bars */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .skills-grid .card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
   padding: 2rem;
+  border: 1px solid var(--border);
 }
 
-.skills-grid .card h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
+.skill-item {
+  margin-bottom: 1.5rem;
+}
+
+.skill-label {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.skills-grid ul {
-  list-style: none;
-}
-
-.skills-grid li {
-  color: var(--text-secondary);
   margin-bottom: 0.5rem;
-  padding-left: 1rem;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.skill-percentage {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
   position: relative;
 }
 
-.skills-grid li:before {
-  content: "•";
-  color: var(--accent);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
+.skill-progress {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+  position: relative;
 }
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Progress Bar Colors */
+.progress-blue { background: var(--progress-blue); }
+.progress-amber { background: var(--progress-amber); }
+.progress-green { background: var(--progress-green); }
+.progress-red { background: var(--progress-red); }
+.progress-purple { background: var(--progress-purple); }
+.progress-pink { background: var(--progress-pink); }
+.progress-cyan { background: var(--progress-cyan); }
 
 /* Contact Cards */
 .contact-card {
@@ -363,7 +507,7 @@ body {
 .contact-icon {
   width: 60px;
   height: 60px;
-  background: var(--accent);
+  background: var(--accent-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -387,20 +531,28 @@ body {
 }
 
 .contact-card a {
-  color: var(--accent);
+  color: var(--accent-primary);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .contact-card a:hover {
-  color: var(--accent-hover);
+  color: var(--text-primary);
 }
 
 /* Education Cards */
 .education-card {
-  text-align: center;
+  background: var(--bg-secondary);
+  border-radius: 12px;
   padding: 2rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
 }
 
 .education-card h3 {
@@ -412,7 +564,7 @@ body {
 }
 
 .education-card .institution {
-  color: var(--accent);
+  color: var(--accent-primary);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -420,6 +572,13 @@ body {
 .education-card .date {
   color: var(--text-secondary);
   font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.education-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* Buttons */
