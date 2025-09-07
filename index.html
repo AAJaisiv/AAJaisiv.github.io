@@ -342,7 +342,14 @@
         duration: 800,
         easing: 'ease-in-out',
         once: true,
-        offset: 100
+        offset: 100,
+        delay: 0,
+        anchorPlacement: 'top-bottom'
+      });
+
+      // Refresh AOS after page load to ensure proper initialization
+      window.addEventListener('load', function() {
+        AOS.refresh();
       });
 
       // Smooth scrolling for any anchor links
